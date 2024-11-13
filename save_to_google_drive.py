@@ -2,6 +2,7 @@ import os.path
 os.system("")   # makes colors process right for Windows
 import sys
 import json
+from json.decoder import JSONDecoder
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -24,7 +25,8 @@ class FileToUpload:
         self.mime_lookup = {
             "pdf": "application/pdf",
             "psd": "image/vnd.adobe.photoshop",
-            "jpg": "image/jpeg"
+            "jpg": "image/jpeg",
+            "png": "image/png"
         }
 
         file_ext = self.filename.split(".")[1]
@@ -69,9 +71,14 @@ class FileToUpload:
                     "credentials.json", SCOPES
                 )
                 creds = flow.run_local_server(port=0)
+
                 # Save the credentials for the next run
                 with open("token.json", "w") as token:
-                    token.write(creds.to_json())
+                    # Credentials.to_json() returns a str, 
+                    # so convert it to a dict so it can be 
+                    # dumped with nice formatting
+                    creds_json = JSONDecoder().decode(creds.to_json())
+                    json.dump(creds_json, token, indent=4)
         
         return creds
 
