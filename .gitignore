@@ -1,4 +1,5 @@
 *.json
+!external_drive_paths.json
 archive/
 __pycache__/
 config-ext-drive.sh
