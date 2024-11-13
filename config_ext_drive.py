@@ -6,8 +6,9 @@ with open("external_drive_paths.json", "r") as paths_file:
 
 dos_like  = "backslashes (\\)"
 unix_like = "forward slashes (/)"
-prompt  = "Please enter the absolute filepath to your external hard drive,"
+prompt  = "Please enter the absolute filepath to your external hard drive, \n"
 
+# if it's a Windows operating system
 if (os.name == "nt"):
     prompt += "using " + dos_like + " to separate folders.\n"
     path = input(prompt)
