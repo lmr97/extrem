@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "sabrinas-double-save"
+package-mode = false
+version = "0.1.0"
+description = "Saves given file to both an external drive and Google Drive."
+authors = ["Martin Reid <lmreid1997@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+google = "3.0.0"
+google-api-python-client = "^2.151.0"
+google-auth-httplib2 = "^0.2.0"
+google-auth-oauthlib = "^1.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
