@@ -12,7 +12,10 @@ Param (
     [string] $Folder
     )
 
-If(Test-Path D:\exdrive)
+# get configured path to external drive (no need to make it an argument)
+$ExternalDrivePaths = Get-Content 'external_drive_paths.json' | Out-String | ConvertFrom-Json
+
+If(Test-Path $ExternalDrivePaths.DOSFilePath)
 {
     Copy-Item -Path .\$File -Destination \home\martinr\$Folder
 }
