@@ -17,7 +17,7 @@ $ExternalDrivePaths = Get-Content 'external_drive_paths.json' | Out-String | Con
 
 If(Test-Path $ExternalDrivePaths.DOSFilePath)
 {
-    Copy-Item -Path .\$File -Destination \home\martinr\$Folder
+    Copy-Item -Path .\$File -Destination $ExternalDrivePaths.DOSFilePath+$Folder
 }
 Else
 {
