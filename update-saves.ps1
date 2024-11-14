@@ -12,8 +12,18 @@ Param (
     [string] $Folder
     )
 
-# get configured path to external drive (no need to make it an argument)
-$ExternalDrivePaths = Get-Content 'external_drive_paths.json' | Out-String | ConvertFrom-Json
+# get configured path to external drive (no need to make it a parameter)
+$ExternalDrivePaths = Get-Content '.\utils\external_drive_paths.json' | Out-String | ConvertFrom-Json
+
+
+# configure external drive path for current OS if it's not there
+If($IsWindows -AND !$ExternalDrivePaths.DOSFilePath -OR (($IsMacOS -OR $IsLinux) -AND !$ExternalDrivePaths.UnixFilePath))
+{
+    python3 .\utils\config_ext_drive.py
+}
+
+python3 .\utils\ensure_slashes.py  # check that it's got slashes at the end regardless
+
 
 If(Test-Path $ExternalDrivePaths.DOSFilePath)
 {

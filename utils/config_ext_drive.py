@@ -12,19 +12,10 @@ prompt  = "Please enter the absolute filepath to your external hard drive, \n"
 if (os.name == "nt"):
     prompt += "using " + dos_like + " to separate folders.\n"
     path = input(prompt)
-
-    # make sure it ends with a slash
-    if (path[-1] != "\\"):
-        path += "\\"
-    
     drive_paths["DOSFilePath"] = path
 else:
     prompt += "using " + unix_like + " to separate folders.\n\n"
     path = input(prompt)
-
-    if (path[-1] != "/"):
-        path += "/"
-        
     drive_paths["UnixFilePath"] = path
 
 with open("external_drive_paths.json", "w") as paths_file:
