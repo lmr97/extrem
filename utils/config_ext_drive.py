@@ -37,7 +37,7 @@ while(not filepath_is_valid):
     filepath_is_valid = os.path.exists(path)
 
     if (not filepath_is_valid):
-        print("That path does not lead to an external drive.")
+        print("\033[0;31mThat path does not lead to an external drive.\033[0m")
         print("Make sure to check the spelling, and try again!")
 
 
