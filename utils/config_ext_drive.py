@@ -1,7 +1,7 @@
 import os
 import json
 
-with open("external_drive_paths.json", "r") as paths_file:
+with open(os.path.abspath("./utils/external_drive_paths.json"), "r") as paths_file:
     drive_paths = json.load(paths_file)
 
 print("It looks like you haven't selected an external drive yet.")
@@ -17,7 +17,7 @@ prompt  = """
         3. In the right-click menu, select "Copy Address".
         4. Paste the address below!
 """
-
+os.path.abspath
 
 dos_like  = "backslashes (\\)"
 unix_like = "forward slashes (/)"
@@ -43,5 +43,5 @@ while(not filepath_is_valid):
 
 print("\nThanks! If you use a different drive, please let me know.")
 
-with open("external_drive_paths.json", "w") as paths_file:
+with open(os.path.abspath("./utils/external_drive_paths.json"), "w") as paths_file:
     json.dump(drive_paths, paths_file, indent=4)
