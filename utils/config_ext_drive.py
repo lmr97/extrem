@@ -4,18 +4,18 @@ import json
 with open(os.path.abspath("./utils/external_drive_paths.json"), "r") as paths_file:
     drive_paths = json.load(paths_file)
 
-print("It looks like you haven't selected an external drive yet.")
+print("\033[0;33m\nIt looks like you haven't selected an external drive yet.\033[0m")
 
 prompt  = """
-    Please enter the (absolute) filepath to your external hard drive,
-    using %s to separate folder names.
-    (this path will be saved for latter, so you won't have to enter it again.)
+Please enter the (absolute) filepath to your external hard drive,
+using %s to separate folder names.
+(this path will be saved for latter, so you won't have to enter it again.)
 
-    To find the filepath to your drive: 
-        1. Open File Explorer, and navigate to your external hard drive.
-        2. In the bar near the top of the window, right-click your drive's name.
-        3. In the right-click menu, select "Copy Address".
-        4. Paste the address below!
+To find the filepath to your drive: 
+    1. Open File Explorer, and navigate to your external hard drive.
+    2. In the bar near the top of the window, right-click your drive's name.
+    3. In the right-click menu, select "Copy Address".
+    4. Paste the address below!\n
 """
 os.path.abspath
 
