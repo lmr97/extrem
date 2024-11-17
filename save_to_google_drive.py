@@ -18,6 +18,9 @@ SCOPES = ["https://www.googleapis.com/auth/drive"]
 class FileToUpload:
     def __init__(self, filename, dest_Drive_folder=None):
 
+        if (not filename or filename != ""): 
+            raise FileNotFoundError("I need a filename!")
+
         self.filename    = filename
         self.dest_folder = dest_Drive_folder
 
@@ -46,7 +49,7 @@ class FileToUpload:
         self.known_file_IDs   = json.load(open("file_IDs.json", "r"))
         self.known_folder_IDs = json.load(open("folder_IDs.json", "r"))
 
-        if (dest_Drive_folder):
+        if (dest_Drive_folder and dest_Drive_folder != ""):
             self.folder_ID = self.find_folder_ID()
         else:
             self.folder_ID = None
@@ -225,7 +228,11 @@ def main():
     if len(sys.argv) == 3:
         dest_folder = sys.argv[2]
 
-    file = FileToUpload(filename=sys.argv[1], dest_Drive_folder=dest_folder)
+    try:
+        file = FileToUpload(filename=sys.argv[1], dest_Drive_folder=dest_folder)
+    except FileNotFoundError:
+        print("A file was not specified. One is needed in order to run this program.")
+        exit(1)
 
     if (file.file_ID):      # if the file is already on Drive...
         print("File found. Updating...")
