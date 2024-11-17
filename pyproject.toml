@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "sabrinas-double-save"
+name = "extrem"
 package-mode = false
 version = "0.1.0"
 description = "Saves given file to both an external drive and Google Drive."
