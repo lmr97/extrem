@@ -11,6 +11,7 @@ This program takes a given file, and copies it to a chosen external drive, as we
     git clone https://github.com/lmr97/extrem
     cd ./extrem
     ```
+2. Run the Bash script `fix-ftr-install.sh`. This prevents build errors due to a broken link deep in the heart of the `faster-than-requests`.
 2. Set up the Python virtual environment. There are a few options available to do so:
     
     <u>**Poetry**</u> (*prefered*): This program uses [Poetry](https://python-poetry.org/docs/) for Python dependency management, so if you have it installed, all you need to do is run `poetry install`.
