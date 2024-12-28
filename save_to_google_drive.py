@@ -65,14 +65,14 @@ class FileToUpload:
                 )
                 creds = flow.run_local_server(port=0)
 
-                # Save the credentials for the next run
-                with open("token.json", "w") as token:
-                    # Credentials.to_json() returns a str, 
-                    # so convert it to a dict so it can be 
-                    # dumped with nice formatting
-                    creds_json = JSONDecoder().decode(creds.to_json())
-                    json.dump(creds_json, token, indent=4)
-        
+            # Save the credentials for the next run
+            with open("token.json", "w") as token:
+                # Credentials.to_json() returns a str, 
+                # so convert it to a dict so it can be 
+                # dumped with nice formatting
+                creds_json = JSONDecoder().decode(creds.to_json())
+                json.dump(creds_json, token, indent=4)
+    
         return creds
 
     # searches specified folder, if given
