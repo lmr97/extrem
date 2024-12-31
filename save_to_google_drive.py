@@ -1,4 +1,4 @@
-import os.path
+import os
 os.system("")   # makes colors process right for Windows
 import sys
 from FileToUpload import FileToUpload

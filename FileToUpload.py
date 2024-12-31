@@ -1,3 +1,4 @@
+import os.path
 import json
 from json.decoder import JSONDecoder
 import mimetypes
