@@ -2,9 +2,9 @@
 
 ***Ext**ernal and **Rem**ote file copy progam*
 
-This branch interfaces with the Google Drive REST API directly, instead of using the Python API.
-
 This program takes a given file, and copies it to a chosen external drive, as well as the user's Google Drive. A destination folder common to both locations can be specified if so desired.  
+
+<u>*About this branch*</u>: *This branch interfaces with the Google Drive REST API directly, instead of using Google's Python client library, like the main branch.*
 
 ## Installation
 
