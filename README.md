@@ -13,7 +13,10 @@ This program takes a given file, and copies it to a chosen external drive, as we
     git clone https://github.com/lmr97/extrem
     cd ./extrem
     ```
-2. Set up the Python virtual environment. There are a few options available to do so:
+    
+2. **Get API credentials**. Send me an email or message on GitHub, and I'll reply with a JSON file containing the info you'll need to generate access tokens. Once you have that file, ensure it's named `credentials.json` and is located in the repo's root directory.
+
+3. Set up the Python virtual environment. There are a few options available to do so:
     
     <u>**Poetry**</u> (*prefered*): This program uses [Poetry](https://python-poetry.org/docs/) for Python dependency management, so if you have it installed, all you need to do is run `poetry install`.
 
@@ -25,7 +28,7 @@ This program takes a given file, and copies it to a chosen external drive, as we
 
     <u>**Manual**</u> There is a `requirements.txt` file you can use if you already have an environment you'd like to run this in.
 
-3. **For Windows users**: Since this runs off a PowerShell script, will need to [sign](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7.4) the main script `update-saves.ps1`.
+4. **For Windows users**: Since this runs off a PowerShell script, will need to [sign](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7.4) the main script `update-saves.ps1`.
 
 ## Basic Usage
 
